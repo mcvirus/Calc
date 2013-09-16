@@ -6,7 +6,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +21,7 @@ import org.apache.log4j.Logger;
 
 public class Main extends HttpServlet {
 
- //   public static final Logger log = Logger.getLogger(Main.class);
+   // public static final Logger log = Logger.getLogger(Main.class);
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 

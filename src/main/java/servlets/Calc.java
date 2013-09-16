@@ -4,6 +4,8 @@ package servlets;
 //import org.apache.log4j.Logger;
 
 import java.text.NumberFormat;
+import java.util.logging.Logger;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +19,7 @@ import java.text.NumberFormat;
 
 public class Calc  {
 
-   // public static final Logger log = Logger.getLogger(Calc.class);
+ //   public static final Logger log = Logger.getLogger(Calc.class);
 
     private static String format(double value) {
         return NumberFormat.getInstance().format(value);
