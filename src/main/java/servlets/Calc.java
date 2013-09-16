@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
  * User: vortax
  * Date: 15.09.13
  * Time: 11:41
- * To change this template use DecimalFormat format = new DecimalFormat();File | Settings | File Templates.
  */
 
 
