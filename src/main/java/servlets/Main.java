@@ -18,9 +18,10 @@ import org.apache.log4j.Logger;
  */
 
 
-public class Main extends HttpServlet {
+class Main extends HttpServlet {
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+
         Logger log = (Logger)getServletContext().getAttribute("log4");
         log.info("Enter to Main.java");
 
@@ -48,7 +49,7 @@ public class Main extends HttpServlet {
                 secondValueD = Double.parseDouble(secondValue);
             }
 
-            String result = Calc.calculation(firstValueD, operator, secondValueD);
+            String result = OperationPool.calculation(firstValueD, operator, secondValueD);
 
             request.setAttribute("textResult", result);
             log.info("Calculating " + result);
