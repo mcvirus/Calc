@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  */
 
 
-class Main extends HttpServlet {
+public class Main extends HttpServlet {
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 
