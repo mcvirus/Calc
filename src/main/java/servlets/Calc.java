@@ -1,11 +1,10 @@
 package servlets;
 
 
-//import org.apache.log4j.Logger;
+
 
 import java.text.NumberFormat;
-import java.util.logging.Logger;
-
+import org.apache.log4j.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,16 +16,17 @@ import java.util.logging.Logger;
 
 
 
-public class Calc  {
+public class Calc {
 
- //   public static final Logger log = Logger.getLogger(Calc.class);
+    public static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("Calc.class");
 
     private static String format(double value) {
         return NumberFormat.getInstance().format(value);
     }
 
     public static String calculation(double firstValue, String operator, double secondValue) {
-   //     log.debug("Start calculating");
+        log.debug("Start calculating");
+
         double result;
 
         if (operator.equals("ADDITION")){
@@ -47,7 +47,7 @@ public class Calc  {
             return format(firstValue) + " / " + format(secondValue) + " = " + format(result);
         }
          } catch (ArithmeticException e){
-   //          log.error("Division by zero", e);
+             log.error("Division by zero", e);
              return "Division by zero";
          }
         if (operator.equals("SQUARE_ROOT")){
