@@ -6,7 +6,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
-import java.util.logging.Logger;
+
+import org.apache.log4j.Logger;
 
 
 /**
@@ -18,14 +19,13 @@ import java.util.logging.Logger;
  */
 
 
-
 public class Main extends HttpServlet {
 
-   // public static final Logger log = Logger.getLogger(Main.class);
+    public static final Logger log = Logger.getLogger(Main.class);
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 
-   //     log.debug("Start processing");
+        log.debug("Start processing");
 
         String firstValue = "Please enter the first value";
         String secondValue;
@@ -33,36 +33,35 @@ public class Main extends HttpServlet {
         double firstValueD;
         double secondValueD;
         response.setContentType("text/html");
-         try{
-     //        log.info("Conneced from IP "+ request.getRemoteHost());
-       //      log.info("Locale is " + request.getLocale());
+        try {
+            log.info("Conneced from IP " + request.getRemoteHost());
+            log.info("Locale is " + request.getLocale());
 
-             firstValue = request.getParameter("firstValue");
-             firstValue = firstValue.replace(",",".");
-             firstValueD = Double.parseDouble(firstValue);
+            firstValue = request.getParameter("firstValue");
+            firstValue = firstValue.replace(",", ".");
+            firstValueD = Double.parseDouble(firstValue);
 
-             operator = request.getParameter("operator");
+            operator = request.getParameter("operator");
 
-             secondValue = request.getParameter("secondValue");
-             if(secondValue.isEmpty() && (operator.equals("SQUARE_ROOT"))){
-                 secondValueD = -1;
-             } else {
-                 secondValue = secondValue.replace(",",".");
-                 secondValueD = Double.parseDouble(secondValue);
-             }
-
-             String result = Calc.calculation(firstValueD,operator,secondValueD);
-
-             request.setAttribute("textResult", result);
-         //    log.info("Calculating " + result);
+            secondValue = request.getParameter("secondValue");
+            if (secondValue.isEmpty() && (operator.equals("SQUARE_ROOT"))) {
+                secondValueD = -1;
+            } else {
+                secondValue = secondValue.replace(",", ".");
+                secondValueD = Double.parseDouble(secondValue);
             }
-         catch (NumberFormatException e){
-             request.setAttribute("textResult", "Please enter the second value");
-             request.setAttribute("textFirstValue", firstValue);
-           //  log.error("error", e);
-         } finally {
-            // log.info("finish");
-         }
+
+            String result = Calc.calculation(firstValueD, operator, secondValueD);
+
+            request.setAttribute("textResult", result);
+            log.info("Calculating " + result);
+        } catch (NumberFormatException e) {
+            request.setAttribute("textResult", "Please enter the second value");
+            request.setAttribute("textFirstValue", firstValue);
+            log.error("error", e);
+        } finally {
+            log.info("finish");
+        }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);
