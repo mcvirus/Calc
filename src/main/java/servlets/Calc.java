@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
  * User: vortax
  * Date: 15.09.13
  * Time: 11:41
+
  */
 
 
@@ -24,6 +25,7 @@ public class Calc {
     }
 
     public static String calculation(double firstValue, String operator, double secondValue) {
+
         log.debug("Start calculating");
 
         double result;

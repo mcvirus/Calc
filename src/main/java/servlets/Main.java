@@ -20,11 +20,9 @@ import org.apache.log4j.Logger;
 
 public class Main extends HttpServlet {
 
-    public static final Logger log = Logger.getLogger(Main.class);
-
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
-
-        log.debug("Start processing");
+        Logger log = (Logger)getServletContext().getAttribute("log4");
+        log.info("Enter to Main.java");
 
         String firstValue = "Please enter the first value";
         String secondValue;
@@ -59,7 +57,7 @@ public class Main extends HttpServlet {
             request.setAttribute("textFirstValue", firstValue);
             log.error("error", e);
         } finally {
-            log.info("finish");
+            log.info("End");
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
