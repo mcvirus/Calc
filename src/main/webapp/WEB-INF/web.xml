@@ -13,27 +13,11 @@
         <servlet-class>servlets.Main</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>Log4jInit</servlet-name>
-        <servlet-class>servlets.Log4jInit</servlet-class>
-        <init-param>
-            <param-name>logfile</param-name>
-            <param-value>WEB-INF/log4j.properties</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
 
     <servlet-mapping>
         <servlet-name>Main</servlet-name>
         <url-pattern>/Main</url-pattern>
     </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>Log4jInit</servlet-name>
-        <url-pattern>/Log4jInit</url-pattern>
-    </servlet-mapping>
-
 
 </web-app>
 

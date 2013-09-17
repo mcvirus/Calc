@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 
+import logic.OperationFactory;
 import org.apache.log4j.Logger;
 
 
@@ -39,6 +40,7 @@ public class Main extends HttpServlet {
             firstValue = firstValue.replace(",", ".");
             firstValueD = Double.parseDouble(firstValue);
 
+
             operator = request.getParameter("operator");
 
             secondValue = request.getParameter("secondValue");
@@ -49,7 +51,7 @@ public class Main extends HttpServlet {
                 secondValueD = Double.parseDouble(secondValue);
             }
 
-            String result = OperationPool.calculation(firstValueD, operator, secondValueD);
+            String result = OperationFactory.calculation(firstValueD, operator, secondValueD);
 
             request.setAttribute("textResult", result);
             log.info("Calculating " + result);

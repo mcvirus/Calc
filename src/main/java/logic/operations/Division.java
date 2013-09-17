@@ -1,4 +1,6 @@
-package servlets;
+package logic.operations;
+
+import logic.OutFormat;
 
 /**
  * Created with IntelliJ IDEA.
@@ -6,20 +8,20 @@ package servlets;
  * Date: 16.09.13
  * Time: 23:53
  */
-class Division extends OutFormat {
+public class Division {
 
     public static String calc(double firstValue, double secondValue) {
 
-        log.info("Division started");
+        OutFormat.log.info("Division started");
 
         double result;
         try {
             result = firstValue / secondValue;
         } catch (ArithmeticException e) {
-            log.error("Division by zero", e);
+            OutFormat.log.error("Division by zero", e);
             return "Division by zero";
         }
 
-        return OutFormat.format(firstValue) + " / " + format(secondValue) + " = " + format(result);
+        return OutFormat.format(firstValue) + " / " + OutFormat.format(secondValue) + " = " + OutFormat.format(result);
     }
 }

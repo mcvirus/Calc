@@ -1,7 +1,6 @@
-package servlets;
+package logic;
 
-import java.text.NumberFormat;
-import org.apache.log4j.Logger;
+import logic.operations.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,16 +10,16 @@ import org.apache.log4j.Logger;
  */
 
 
-class OperationPool {
+public class OperationFactory {
 
-    public static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("OperationPool.class");
+    static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("OperationFactory.class");
 
     public static String calculation(double firstValue, String operator, double secondValue) {
 
         log.info("Start calculating");
 
         if (operator.equals("ADDITION")) {
-            return Addition.calc(firstValue, secondValue);
+          return Addition.calc(firstValue, secondValue);
         }
         if (operator.equals("SUBSTRACTION")) {
             return Substraction.calc(firstValue, secondValue);
