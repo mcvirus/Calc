@@ -9,6 +9,7 @@ import logic.operations.*;
  * Time: 11:41
  */
 
+
 public class OperationFactory {
 
     static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("OperationFactory.class");
