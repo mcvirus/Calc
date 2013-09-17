@@ -3,12 +3,6 @@ package logic.operations;
 import logic.OutFormat;
 import org.apache.log4j.Logger;
 
-/**
- * Created with IntelliJ IDEA.
- * User: vortax
- * Date: 17.09.13
- * Time: 0:01
- */
 public class SquareRoot implements Operation {
 
     private static final Logger LOG = Logger.getLogger(SquareRoot.class);

@@ -3,13 +3,6 @@ package logic;
 import logic.operations.*;
 import org.apache.log4j.Logger;
 
-/**
- * Created with IntelliJ IDEA.
- * User: vortax
- * Date: 15.09.13
- * Time: 11:41
- */
-
 
 public class OperationFactory {
 

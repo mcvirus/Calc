@@ -3,12 +3,7 @@ package logic.operations;
 import logic.OutFormat;
 import org.apache.log4j.Logger;
 
-/**
- * Created with IntelliJ IDEA.
- * User: vortax
- * Date: 16.09.13
- * Time: 23:53
- */
+
 public class Division implements Operation {
 
     private static final Logger LOG = Logger.getLogger(Division.class);

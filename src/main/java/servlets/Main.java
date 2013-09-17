@@ -10,15 +10,6 @@ import java.io.IOException;
 import logic.OperationFactory;
 import org.apache.log4j.Logger;
 
-
-/**
- * Created with IntelliJ IDEA.
- * User: vortax
- * Date: 14.09.13
- * Time: 14:21
- */
-
-
 public class Main extends HttpServlet {
     private static final Logger LOG = Logger.getLogger(Main.class);
 
@@ -36,8 +27,7 @@ public class Main extends HttpServlet {
             LOG.info("Conneced from IP " + request.getRemoteHost());
             LOG.info("Locale is " + request.getLocale());
 
-            firstValue = request.getParameter("firstValue");
-            firstValue = firstValue.replace(",", ".");
+            firstValue = request.getParameter("firstValue").replace(",", ".");
             firstValueD = Double.parseDouble(firstValue);
 
             operator = request.getParameter("operator");
