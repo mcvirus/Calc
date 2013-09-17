@@ -8,7 +8,7 @@
     <table>
         <tr>
             <td><B>First value</B></td>
-            <td><p><input title="текст" type=textbox name="firstValue" pattern="[-+]?[0-9]*[.,]?[0-9]+" size="12" value="${textFirstValue}"
+            <td><p><input title="enter the number" type=textbox name="firstValue" pattern="[-+]?[0-9]*[.,]?[0-9]+" size="12" value="${textFirstValue}"
                           required></p></td>
         </tr>
         <tr>
@@ -23,7 +23,7 @@
         </tr>
         <tr>
             <td><B>Second value</B></td>
-            <td><p><input type=textbox name="secondValue" pattern="[-+]?[0-9]*[.,]?[0-9]+" size="12" ></p></td>
+            <td><p><input title="enter the number" type=textbox name="secondValue" pattern="[-+]?[0-9]*[.,]?[0-9]+" size="12" ></p></td>
         </tr>
     </table>
     <input type=submit value="Calculate">
