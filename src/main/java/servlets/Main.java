@@ -23,7 +23,8 @@ public class Main extends HttpServlet {
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 
-        Logger log = (Logger)getServletContext().getAttribute("log4");
+        org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("Main.class");
+
         log.info("Enter to Main.java");
 
         String firstValue = "Please enter the first value";
