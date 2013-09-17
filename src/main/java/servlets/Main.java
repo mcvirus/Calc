@@ -40,7 +40,6 @@ public class Main extends HttpServlet {
             firstValue = firstValue.replace(",", ".");
             firstValueD = Double.parseDouble(firstValue);
 
-
             operator = request.getParameter("operator");
 
             secondValue = request.getParameter("secondValue");
@@ -51,7 +50,6 @@ public class Main extends HttpServlet {
                 secondValueD = Double.parseDouble(secondValue);
             }
 
-            //  String result = OperationFactory.calculation(firstValueD, operator, secondValueD);
             String result = OperationFactory.create(operator).calc(firstValueD, secondValueD);
             request.setAttribute("textResult", result);
             LOG.info("Calculating " + result);
@@ -65,7 +63,5 @@ public class Main extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);
-
-
     }
 }
