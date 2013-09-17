@@ -11,7 +11,7 @@ public class Multiplication implements Operation {
     @Override
     public String calc(double firstValue, double secondValue) {
 
-        LOG.info("Multiplication started");
+        LOG.debug("Multiplication started");
 
         double result = firstValue * secondValue;
         return OutFormat.format(firstValue) + " * " + OutFormat.format(secondValue) + " = " + OutFormat.format(result);

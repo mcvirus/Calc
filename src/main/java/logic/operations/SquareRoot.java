@@ -10,7 +10,7 @@ public class SquareRoot implements Operation {
     @Override
     public String calc(double firstValue, double secondValue) {
 
-        LOG.info("Square root calculation started");
+        LOG.debug("Square root calculation started");
 
         if (firstValue >= 0) {
             double result = Math.sqrt(firstValue);

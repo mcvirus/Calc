@@ -10,7 +10,7 @@ public class OperationFactory {
 
     public static Operation create(String operator) {
 
-        LOG.info("Start calculating");
+        LOG.debug("Start calculating");
 
         if (operator.equals("ADDITION")) {
             return new Addition();

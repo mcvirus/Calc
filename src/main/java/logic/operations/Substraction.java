@@ -10,7 +10,7 @@ public class Substraction implements Operation {
     @Override
     public String calc(double firstValue, double secondValue) {
 
-        LOG.info("Substraction started");
+        LOG.debug("Substraction started");
 
         double result = firstValue - secondValue;
         return OutFormat.format(firstValue) + " - " + OutFormat.format(secondValue) + " = " + OutFormat.format(result);

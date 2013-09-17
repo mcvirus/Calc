@@ -11,7 +11,7 @@ public class Division implements Operation {
     @Override
     public String calc(double firstValue, double secondValue) {
 
-        LOG.info("Division started");
+        LOG.debug("Division started");
 
         double result;
         try {

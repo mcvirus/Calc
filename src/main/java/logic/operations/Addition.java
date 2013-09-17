@@ -11,7 +11,7 @@ public class Addition implements Operation {
     @Override
     public String calc(double firstValue, double secondValue) {
 
-        LOG.info("Addition started");
+        LOG.debug("Addition started");
         double result = firstValue + secondValue;
         return OutFormat.format(firstValue) + " + " + OutFormat.format(secondValue) + " = " + OutFormat.format(result);
 
