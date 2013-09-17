@@ -13,7 +13,7 @@
         </tr>
         <tr>
             <td><B>Operation type</B></td>
-            <td><select name="operator" size="1" required>
+            <td><select name="operator" title="select operation type" size="1" required>
                 <option value="ADDITION"> +</option>
                 <option value="SUBSTRACTION"> -</option>
                 <option value="MULTIPLICATION"> *</option>
