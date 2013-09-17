@@ -15,24 +15,24 @@ public class OperationFactory {
 
     private static final Logger LOG = Logger.getLogger(OperationFactory.class);
 
-    public static String calculation(double firstValue, String operator, double secondValue) {
+    public static Operation create(String operator) {
 
         LOG.info("Start calculating");
 
         if (operator.equals("ADDITION")) {
-          return Addition.calc(firstValue, secondValue);
+            return new Addition();
         }
         if (operator.equals("SUBSTRACTION")) {
-            return Substraction.calc(firstValue, secondValue);
+            return new Substraction();
         }
         if (operator.equals("MULTIPLICATION")) {
-            return Multiplication.calc(firstValue, secondValue);
+            return new Multiplication();
         }
         if (operator.equals("DIVISION")) {
-            return Division.calc(firstValue, secondValue);
+            return new Division();
         }
         if (operator.equals("SQUARE_ROOT")) {
-            return SquareRoot.calc(firstValue, secondValue);
+            return new SquareRoot();
         }
         return null;
     }

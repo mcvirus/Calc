@@ -10,11 +10,12 @@ import org.apache.log4j.Logger;
  * Date: 16.09.13
  * Time: 23:51
  */
-public class Multiplication  {
+public class Multiplication implements Operation {
 
     private static final Logger LOG = Logger.getLogger(Multiplication.class);
 
-    public static String calc(double firstValue, double secondValue) {
+    @Override
+    public String calc(double firstValue, double secondValue) {
 
         LOG.info("Multiplication started");
 

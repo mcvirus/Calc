@@ -10,7 +10,7 @@ import java.text.NumberFormat;
  * Date: 16.09.13
  * Time: 23:40
  */
- public class OutFormat {
+public class OutFormat {
     private static final Logger LOG = Logger.getLogger(OutFormat.class);
 
     public static final String format(double value) {

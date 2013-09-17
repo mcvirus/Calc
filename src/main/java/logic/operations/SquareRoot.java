@@ -9,11 +9,12 @@ import org.apache.log4j.Logger;
  * Date: 17.09.13
  * Time: 0:01
  */
-public class SquareRoot {
+public class SquareRoot implements Operation {
 
     private static final Logger LOG = Logger.getLogger(SquareRoot.class);
 
-    public static String calc(double firstValue, double secondValue) {
+    @Override
+    public String calc(double firstValue, double secondValue) {
 
         LOG.info("Square root calculation started");
 

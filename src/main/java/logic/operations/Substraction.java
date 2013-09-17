@@ -9,15 +9,16 @@ import org.apache.log4j.Logger;
  * Date: 16.09.13
  * Time: 23:47
  */
-public class Substraction {
+public class Substraction implements Operation {
 
     private static final Logger LOG = Logger.getLogger(Substraction.class);
 
-    public static String calc(double firstValue, double secondValue){
+    @Override
+    public String calc(double firstValue, double secondValue) {
 
         LOG.info("Substraction started");
 
-        double result = firstValue - secondValue ;
+        double result = firstValue - secondValue;
         return OutFormat.format(firstValue) + " - " + OutFormat.format(secondValue) + " = " + OutFormat.format(result);
     }
 }

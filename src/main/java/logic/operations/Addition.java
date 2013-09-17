@@ -10,16 +10,17 @@ import org.apache.log4j.Logger;
  * Date: 16.09.13
  * Time: 23:32
  */
-public class Addition {
-
+public class Addition implements Operation {
 
     private static final Logger LOG = Logger.getLogger(Addition.class);
 
-    public static String calc(double firstValue, double secondValue) {
+    @Override
+    public String calc(double firstValue, double secondValue) {
 
         LOG.info("Addition started");
 
         double result = firstValue + secondValue;
-        return OutFormat.format(firstValue) + " + " +OutFormat.format(secondValue) + " = " + OutFormat.format(result);
+        return OutFormat.format(firstValue) + " + " + OutFormat.format(secondValue) + " = " + OutFormat.format(result);
+
     }
 }

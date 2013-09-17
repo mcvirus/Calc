@@ -51,8 +51,8 @@ public class Main extends HttpServlet {
                 secondValueD = Double.parseDouble(secondValue);
             }
 
-            String result = OperationFactory.calculation(firstValueD, operator, secondValueD);
-
+            //  String result = OperationFactory.calculation(firstValueD, operator, secondValueD);
+            String result = OperationFactory.create(operator).calc(firstValueD, secondValueD);
             request.setAttribute("textResult", result);
             LOG.info("Calculating " + result);
         } catch (NumberFormatException e) {

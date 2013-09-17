@@ -9,11 +9,12 @@ import org.apache.log4j.Logger;
  * Date: 16.09.13
  * Time: 23:53
  */
-public class Division {
+public class Division implements Operation {
 
     private static final Logger LOG = Logger.getLogger(Division.class);
 
-    public static String calc(double firstValue, double secondValue) {
+    @Override
+    public String calc(double firstValue, double secondValue) {
 
         LOG.info("Division started");
 
