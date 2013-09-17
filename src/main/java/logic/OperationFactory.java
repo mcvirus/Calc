@@ -12,7 +12,7 @@ import logic.operations.*;
 
 public class OperationFactory {
 
-    static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("OperationFactory.class");
+    static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(OperationFactory.class);
 
     public static String calculation(double firstValue, String operator, double secondValue) {
 
