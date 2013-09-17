@@ -1,6 +1,7 @@
 package logic.operations;
 
 import logic.OutFormat;
+import org.apache.log4j.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,9 +11,11 @@ import logic.OutFormat;
  */
 public class Substraction {
 
+    private static final Logger LOG = Logger.getLogger(Substraction.class);
+
     public static String calc(double firstValue, double secondValue){
 
-        OutFormat.log.info("Substraction started");
+        LOG.info("Substraction started");
 
         double result = firstValue - secondValue ;
         return OutFormat.format(firstValue) + " - " + OutFormat.format(secondValue) + " = " + OutFormat.format(result);

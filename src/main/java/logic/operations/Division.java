@@ -1,6 +1,7 @@
 package logic.operations;
 
 import logic.OutFormat;
+import org.apache.log4j.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,15 +11,17 @@ import logic.OutFormat;
  */
 public class Division {
 
+    private static final Logger LOG = Logger.getLogger(Division.class);
+
     public static String calc(double firstValue, double secondValue) {
 
-        OutFormat.log.info("Division started");
+        LOG.info("Division started");
 
         double result;
         try {
             result = firstValue / secondValue;
         } catch (ArithmeticException e) {
-            OutFormat.log.error("Division by zero", e);
+            LOG.error("Division by zero", e);
             return "Division by zero";
         }
 

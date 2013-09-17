@@ -1,5 +1,7 @@
 package logic;
 
+import org.apache.log4j.Logger;
+
 import java.text.NumberFormat;
 
 /**
@@ -9,7 +11,7 @@ import java.text.NumberFormat;
  * Time: 23:40
  */
  public class OutFormat {
-   public static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("OperationFactory.class");
+    private static final Logger LOG = Logger.getLogger(OutFormat.class);
 
     public static final String format(double value) {
         return NumberFormat.getInstance().format(value);

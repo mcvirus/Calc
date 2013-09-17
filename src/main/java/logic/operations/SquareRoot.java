@@ -1,6 +1,7 @@
 package logic.operations;
 
 import logic.OutFormat;
+import org.apache.log4j.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,9 +11,11 @@ import logic.OutFormat;
  */
 public class SquareRoot {
 
+    private static final Logger LOG = Logger.getLogger(SquareRoot.class);
+
     public static String calc(double firstValue, double secondValue) {
 
-        OutFormat.log.info("Square root calculation started");
+        LOG.info("Square root calculation started");
 
         if (firstValue >= 0) {
             double result = Math.sqrt(firstValue);

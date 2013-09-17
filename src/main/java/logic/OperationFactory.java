@@ -1,6 +1,7 @@
 package logic;
 
 import logic.operations.*;
+import org.apache.log4j.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,11 +13,11 @@ import logic.operations.*;
 
 public class OperationFactory {
 
-    static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(OperationFactory.class);
+    private static final Logger LOG = Logger.getLogger(OperationFactory.class);
 
     public static String calculation(double firstValue, String operator, double secondValue) {
 
-        log.info("Start calculating");
+        LOG.info("Start calculating");
 
         if (operator.equals("ADDITION")) {
           return Addition.calc(firstValue, secondValue);

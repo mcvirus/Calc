@@ -20,12 +20,11 @@ import org.apache.log4j.Logger;
 
 
 public class Main extends HttpServlet {
+    private static final Logger LOG = Logger.getLogger(Main.class);
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 
-        org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("Main.class");
-
-        log.info("Enter to Main.java");
+        LOG.info("Enter to Main.java");
 
         String firstValue = "Please enter the first value";
         String secondValue;
@@ -34,8 +33,8 @@ public class Main extends HttpServlet {
         double secondValueD;
         response.setContentType("text/html");
         try {
-            log.info("Conneced from IP " + request.getRemoteHost());
-            log.info("Locale is " + request.getLocale());
+            LOG.info("Conneced from IP " + request.getRemoteHost());
+            LOG.info("Locale is " + request.getLocale());
 
             firstValue = request.getParameter("firstValue");
             firstValue = firstValue.replace(",", ".");
@@ -55,13 +54,13 @@ public class Main extends HttpServlet {
             String result = OperationFactory.calculation(firstValueD, operator, secondValueD);
 
             request.setAttribute("textResult", result);
-            log.info("Calculating " + result);
+            LOG.info("Calculating " + result);
         } catch (NumberFormatException e) {
             request.setAttribute("textResult", "Please enter the second value");
             request.setAttribute("textFirstValue", firstValue);
-            log.error("error", e);
+            LOG.error("error", e);
         } finally {
-            log.info("End");
+            LOG.info("End");
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
