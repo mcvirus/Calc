@@ -15,17 +15,17 @@ public class Main extends HttpServlet {
 
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 
-        LOG.info("Enter to Main.java");
+        LOG.debug("Enter to Main.java");
 
         String firstValue = "Please enter the first value";
         String secondValue;
         String operator;
         double firstValueD;
         double secondValueD;
-        response.setContentType("text/html");
+
         try {
-            LOG.info("Conneced from IP " + request.getRemoteHost());
-            LOG.info("Locale is " + request.getLocale());
+            LOG.debug("Conneced from IP " + request.getRemoteHost());
+            LOG.debug("Locale is " + request.getLocale());
 
             firstValue = request.getParameter("firstValue").replace(",", ".");
             firstValueD = Double.parseDouble(firstValue);
@@ -42,13 +42,14 @@ public class Main extends HttpServlet {
 
             String result = OperationFactory.create(operator).calc(firstValueD, secondValueD);
             request.setAttribute("textResult", result);
-            LOG.info("Calculating " + result);
+            response.setContentType("text/html");
+            LOG.debug("Calculating " + result);
         } catch (NumberFormatException e) {
             request.setAttribute("textResult", "Please enter the second value");
             request.setAttribute("textFirstValue", firstValue);
             LOG.error("error", e);
         } finally {
-            LOG.info("End");
+            LOG.debug("Exit from Main.service()");
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
